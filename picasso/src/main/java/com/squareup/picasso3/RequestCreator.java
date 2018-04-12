@@ -652,7 +652,7 @@ public class RequestCreator {
    */
   public void into(ImageView target, Callback callback) {
     long started = System.nanoTime();
-    checkMain();
+    checkMain();//检查必须运行在主线程，否则会抛出异常
 
     if (target == null) {
       throw new IllegalArgumentException("Target must not be null.");
